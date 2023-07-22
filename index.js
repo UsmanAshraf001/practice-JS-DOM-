@@ -15,14 +15,14 @@
 // Let myDate = new Date();
 // console.log(myDate.getday());
 
-                      // Q=get values from input box in javascript (video 15 ali mughal)
+//                       Q=get values from input box in javascript (video 15 ali mughal)
 
 // function getName(){
 //     var name = document.getElementById("name");
 //     alert(name.value)
 //     name.value = ""
 // }
-                   // Q ==input field py default name set ho jy
+//                    Q ==input field py default name set ho jy
 // function setName(){
 // var name = document.getElementById("name")
 // name.value="usman";
@@ -58,12 +58,26 @@
 
 // Another Example
 
-function addMessage(){
-    var val=document.getElementById('val')
-    var p=document.createElement('p')
-    var text=document.createTextNode(val.value)
-    p.appendChild(text)
-    var message=document.getElementById('message')
-    message.appendChild(p)
-    val.value=""
+// function addMessage(){
+//     var val=document.getElementById('val')
+//     var p=document.createElement('p')
+//     var text=document.createTextNode(val.value)
+//     p.appendChild(text)
+//     var message=document.getElementById('message')
+//     message.appendChild(p)
+//     val.value=""
+// }
+
+// TODO APP PRACTICE
+
+var list = document.getElementById("list");
+
+function addTodo(){
+var todo_item = document.getElementById("todo-item");
+var li = document.createElement('li')
+var liText = document.createTextNode(todo_item.value)
+li.appendChild(liText)
+list.appendChild(li)
+todo_item.value = "";
+    console.log(li)
 }
