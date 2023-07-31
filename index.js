@@ -74,10 +74,44 @@ var list = document.getElementById("list");
 
 function addTodo(){
 var todo_item = document.getElementById("todo-item");
+
+// Create li Tag with textNode
 var li = document.createElement('li')
 var liText = document.createTextNode(todo_item.value)
 li.appendChild(liText)
+
+// Create delete Button Tag with textNode
+var delBtn = document.createElement("Button")
+var delText = document.createTextNode("Delete")
+delBtn.setAttribute("class","Btn")
+delBtn.setAttribute("onclick","deleteItem(this)")
+delBtn.appendChild(delText)
+
+// Create Edit Button Tag with textNode
+var editBtn = document.createElement("Button")
+var editText = document.createTextNode("Edit")
+editBtn.setAttribute("onclick","editItem(this)")
+editBtn.appendChild(editText)
+
+li.appendChild(delBtn)
+li.appendChild(editBtn)
+
 list.appendChild(li)
 todo_item.value = "";
-    console.log(li)
+}
+ 
+// Function of Delete Button
+function deleteItem(e){
+e.parentNode.remove()
+}
+
+// Function of Delete Button
+function editItem(e){
+var val = e.parentNode.firstChild.nodeValue;
+var editValue = prompt("Enter edit value",val)
+e.parentNode.firstChild.nodeValue = editValue
+}
+
+function deleteAll(){
+    list.innerHTML = "";
 }
